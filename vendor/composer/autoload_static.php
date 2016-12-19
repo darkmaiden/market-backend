@@ -278,8 +278,14 @@ class ComposerStaticInit8dbedb875dd55e1be0d48496294f5206
     );
 
     public static $classMap = array (
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_140508_create_categories_table.php',
+        'CreateCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_142016_create_customers_table.php',
+        'CreateDealsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_142107_create_deals_table.php',
+        'CreateItemsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_141216_create_items_table.php',
+        'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_142544_create_messages_table.php',
+        'CreateOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_142354_create_orders_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'CreateSellersTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_19_140928_create_sellers_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
