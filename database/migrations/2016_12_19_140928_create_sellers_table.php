@@ -21,6 +21,7 @@ class CreateSellersTable extends Migration
             $table->string('password');
             $table->text('description');
             $table->integer('deals_qty');
+            $table->string('api_token', 60)->unique();
         });
     }
 
