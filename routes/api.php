@@ -13,6 +13,35 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
+/*Route::get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:api');
+})->middleware('auth:api');*/
+
+Route::post('/register/customer', [
+        'uses' => 'CustomerController@postRegister',
+        'as' => 'customer.register',
+]);
+Route::post('/register/seller', [
+    'uses' => 'SellerController@postRegister',
+    'as' => 'seller.register',
+]);
+
+Route::post('/check/seller', [
+    'uses' => 'SellerController@checkSeller',
+    'as' => 'seller.check'
+]);
+Route::post('/check/customer', [
+    'uses' => 'CustomerController@checkCustomer',
+    'as' => 'customer.check'
+]);
+Route::post('/signin/customer', [
+    'uses' => 'CustomerController@postSignIn',
+    'as' => 'customer.signin',
+]);
+Route::post('/signin/seller', [
+    'uses' => 'SellerController@postSignIn',
+    'as' => 'seller.signin',
+]);
+
+
+

@@ -10,9 +10,4 @@
     return view('customer.home');
 })->name('home');*/
 
-Route::post('/register', [
-    'uses' => 'CustomerController@postRegister',
-    'as' => 'register',
-    'middleware' => 'auth:customer'
-]);
 

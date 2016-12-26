@@ -19,9 +19,10 @@ class CreateSellersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->text('description');
-            $table->integer('deals_qty');
-            $table->string('api_token', 60)->unique();
+            $table->text('description')->nullable();
+            $table->integer('deals_qty')->default(0);
+            $table->boolean('is_verified')->default(0);
+            $table->string('api_token', 120)->nullable();
         });
     }
 

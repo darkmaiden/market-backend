@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/home', function () {
+/*Route::get('/home', function () {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();
     $users[] = Auth::guard('seller')->user();
@@ -10,5 +10,5 @@ Route::get('/home', function () {
     //dd($users);
 
     return view('seller.home');
-})->name('home');
+})->name('home');*/
 
