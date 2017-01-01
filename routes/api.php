@@ -42,6 +42,20 @@ Route::post('/signin/seller', [
     'uses' => 'SellerController@postSignIn',
     'as' => 'seller.signin',
 ]);
+Route::post('/seller/additem', [
+    'uses' => 'SellerController@postAddItem',
+    'as' => 'seller.additem',
+]);
+Route::get('/items/{id}', 'SellerController@getItems');
 
+Route::post('/info', [
+    'uses' => 'CustomerController@info',
+    'as' => 'info'
+]);
+
+Route::get('/preview', [
+    'uses' => 'ItemController@getPreview',
+    'as' => 'preview',
+]);
 
 

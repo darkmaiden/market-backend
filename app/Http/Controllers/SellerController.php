@@ -6,6 +6,7 @@ use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Validator;
 use App\Seller;
 use Illuminate\Http\Request;
+use App\Item;
 
 class SellerController extends Controller
 {
@@ -70,5 +71,23 @@ class SellerController extends Controller
         $seller->api_token = str_random(64).'seller'.$seller->id;
         $seller->update();
         return response()->json(['id' => $seller->id, 'token' => $seller->api_token, 'type' => 'seller']);
+    }
+
+    public function postAddItem(Request $request)
+    {
+        $item = new Item();
+        $item->seller_id = $request['seller_id'];
+        $item->name = $request['name'];
+        $item->description = $request['description'];
+        $item->price = $request['price'];
+        $item->save();
+
+        return response()->json(['mess' => 'Successfully added.', 'id' => $item->id]);
+    }
+
+    public function getItems($id)
+    {
+        $items = Item::where('seller_id', '=', $id)->get();
+        return response()->json(['items' => $items]);
     }
 }

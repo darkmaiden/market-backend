@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -68,6 +69,15 @@ class CustomerController extends Controller
         $customer->api_token = str_random(64).'customer'.$customer->id;
         $customer->update();
         return response()->json(['id' => $customer->id, 'token' => $customer->api_token, 'type' => 'customer']);
+    }
+
+    public function info(Request $request)
+    {
+        $item = Item::find($request['id']);
+        $seller_name = $item->seller->name;
+
+        return response()->json(['id' => $item->id, 'item_name' => $item->name, 'description' => $item->description,
+            'price' => $item->price, 'seller_name' => $seller_name]);
     }
     
 }
